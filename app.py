@@ -99,12 +99,13 @@ def get_order_data(invoice_num, filename, directory):
 def create_invoice(invoice_num, order_data, directory):
     create_pdf(directory + 'MasterInvoice.pdf', directory + f'Invoice {invoice_num}.pdf', order_data)
 
+gmail_password_path = select_file('Please select the gmail password file')
+gmail_password = open(gmail_password_path).read()
 def send_email(invoice_num, name, email, date, directory):
     # Enter your gmail user name and password
 
     gmail_user = "adampellis1@gmail.com"
-    gmail_password_path = select_file('Please select the gmail password file')
-    gmail_password = open(gmail_password_path).read()
+    
 
     # List of recipients
 
