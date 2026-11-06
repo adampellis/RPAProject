@@ -97,7 +97,6 @@ def get_order_data(invoice_num, filename, directory):
     return order_data, name, email, date
 
 def create_invoice(invoice_num, order_data, directory):
-    order_data = order_data[0]
     create_pdf(directory + 'MasterInvoice.pdf', directory + f'Invoice {invoice_num}.pdf', order_data)
 
 def send_email(invoice_num, name, email, date, directory):
